@@ -5,10 +5,10 @@
 		"emitDecoratorMetadata": true,
 		"useDefineForClassFields": true,
 		"moduleDetection": "auto",
-		"module": "es6",
-		"rootDir": "./",
+		"module": "commonjs",
+		"rootDir": ".",
 		"moduleResolution": "node",
-		"baseUrl": "./",
+		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"],
 			"@tests/*": ["tests/*"]

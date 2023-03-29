@@ -6,9 +6,9 @@ module.exports = {
 	},
 	extends: [
 		'xo',
-		'plugin:import/recommended',
 		'plugin:security/recommended',
 		'plugin:unicorn/recommended',
+		'plugin:import/typescript',
 	],
 	overrides: [
 		{
@@ -23,12 +23,16 @@ module.exports = {
 		project: ['tsconfig.json'],
 		tsconfigRootDir: './',
 	},
-	plugins: ['@typescript-eslint', 'import', 'security', 'unicorn', '@babel'],
+	plugins: ['@typescript-eslint', 'security', 'unicorn', '@babel'],
+	settings: {
+		'import/resolver': {
+			typescript: {},
+		},
+	},
 	rules: {
 		'no-underscore-dangle': 'off',
 		'class-methods-use-this': 'off',
 		'import/prefer-default-export': 'off',
-		'import/no-default-export': 'error',
 		'max-classes-per-file': 'off',
 		'max-len': [
 			'error',
@@ -41,5 +45,6 @@ module.exports = {
 				ignoreComments: true,
 			},
 		],
+		'unicorn/prefer-module': 'off',
 	},
 };
