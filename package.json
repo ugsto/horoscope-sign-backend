@@ -13,7 +13,8 @@
 		"format:eslint": "eslint --fix src tests",
 		"format:prettier": "prettier --write src tests",
 		"format": "${npm_execpath} run format:prettier; ${npm_execpath} run format:eslint",
-		"test": "jest --coverage"
+		"test": "jest --coverage",
+		"heroku-postbuild": "yarn && yarn build && rm -Rf node_modules && yarn install --frozen-lockfile --production && yarn start:prod"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.21.0",
