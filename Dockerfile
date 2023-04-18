@@ -16,7 +16,6 @@ ENV NODE_ENV=production
 
 COPY --chown=node:node --from=builder /app/dist /app/dist
 COPY --chown=node:node --from=builder /app/package.json /app/package.json
-COPY --chown=node:node --from=builder /app/.env /app/.env
 WORKDIR /app
 
 RUN yarn install --frozen-lockfile --production
