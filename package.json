@@ -14,7 +14,7 @@
 		"format:prettier": "prettier --write src tests",
 		"format": "${npm_execpath} run format:prettier; ${npm_execpath} run format:eslint",
 		"test": "jest --coverage",
-		"heroku-postbuild": "yarn --ignore-optional && yarn build && rm -Rf node_modules && yarn install --frozen-lockfile --production && yarn start:prod"
+		"heroku-postbuild": "yarn --production=false && yarn build && rm -Rf node_modules && yarn install --frozen-lockfile --production && yarn start:prod"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.21.0",
